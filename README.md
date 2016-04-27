@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/TisButMe/cd-testing.svg?branch=master)](https://travis-ci.org/TisButMe/cd-testing)
+
 # Cdtesting
 
 To start your Phoenix app:
