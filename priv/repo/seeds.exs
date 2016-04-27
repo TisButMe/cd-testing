@@ -9,3 +9,19 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias Cdtesting.Repo
+
+comment1 = %Cdtesting.Comment{
+  author_name: "First Author",
+  content: "Random content"
+}
+
+
+comment2 = %Cdtesting.Comment{
+  author_name: "Second Author",
+  content: "Other content"
+}
+
+Repo.insert!(comment1)
+Repo.insert!(comment2)

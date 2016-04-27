@@ -1,5 +1,11 @@
 <div class="jumbotron">
   <p>
-    AUTO-DEPLOYED
+    AUTO-DEPLOYED & AUTO-MIGRATED
   </p>
+
+  <%= for c <- @comments do %>
+      <p>Author: <%= c.author_name %></p>
+      <p>Content:<br/><%= c.content %></p>
+      <hr/>
+  <% end %>
 </div>
