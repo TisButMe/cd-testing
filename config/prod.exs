@@ -22,7 +22,7 @@ config :cdtesting, Cdtesting.Endpoint,
 config :logger, level: :info
 
 # Configure your database
-config :cdtesting, HelloPhoenix.Repo,
+config :cdtesting, Cdtesting.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20,
