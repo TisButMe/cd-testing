@@ -21,3 +21,6 @@ deploy:
   app: cd-sandbox
   run:
     - "mix ecto.migrate"
+after_deploy:
+  - chmod +x branch_dependent_script.py
+  - ./branch_dependent_script.py
