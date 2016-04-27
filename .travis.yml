@@ -1,19 +1,21 @@
 language: elixir
 elixir:
-  - 1.2.3
+- 1.2.3
 otp_release:
-  - 18.3
-
+- 18.3
 before_script:
-  - cp config/travis_test.exs config/test.exs
-  - mix ecto.create
-  - mix ecto.migrate
-
+- cp config/travis_test.exs config/test.exs
+- mix ecto.create
+- mix ecto.migrate
 services:
-  - postgresql
-
+- postgresql
 addons:
-  postgresql: "9.4"
-
+  postgresql: '9.4'
 env:
-  - TEST_VARIABLE=IAMSET
+- TEST_VARIABLE=IAMSET
+deploy:
+  provider: heroku
+  api_key:
+    secure: CImM1cTVqNpTMPbaZz5tcEof5LsNwKAsjqVye+jHJABootxku8/C8scZ0yawJIfK5+QxAL3h4nTyCg8flt+MJgh2LqIxgyT2ERfOOSgraXq+hOOrrf5TLuh3HWZz5m7zDlMEA/uBy1d7q6JbhxxVfI0/Sj7xwmEJzUBH1rNYIommGB1obR+jufEOFTcfcXimEOovSEngfbTwGXXBz1TUAiQ6Z2TBSEXP95zJ/d6QvuNziSfBphyxAdJ2I10gXPxypbxLw2zzQrDGShFxlr+dS8iB2rPGRU2cLBYbV1j/zyS1FLpQbWt7F2UgRO40CkLHpt3rz3RwyFohP5TMRPm5m030Fb96wsiefuLPIQAHLknJcjWiVaaH+MlFrqzx/gFa+Tdxcpwd71pEfH15+JF88FjeRA74z68zzT5PqO+csJ66SuJ0m6BN6yb++tW7miXQBRg0nAu+NwWzjLAyt0QqxrhnKzhFeuBXGHnREpdJ2ARZPiP4KY52OXh3g4oOwDua0ZcP7jy1xogbWHfCzv2yGonfpVcCAI/nMN/d+1/UoOiuTvWdQLFwZH7IpGSpD0f3SH8XbLz/0e+0MQQbiyNc7WUoNAxinXJ166/RRec+fezVCdeY0gMWSEK1FVVNzTnhFqZd3/xpBsIUwemhRR8G9NXJ0Smo1AhFpQ7t5LPmja8=
+  app: cd-sandbox
+  run: "mix ecto.migrate"
